@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: NetflixMovies
+
+  data:
+    mongodb:
+      host: localhost
+      port:
+      database:
