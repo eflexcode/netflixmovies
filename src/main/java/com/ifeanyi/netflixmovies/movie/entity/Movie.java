@@ -10,7 +10,7 @@ public class Movie {
 
     @Id
     private String id;
-    private String url;
+    private String movieUrl;
     private String name;
     private String contentType;
     private String description;

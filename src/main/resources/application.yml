@@ -5,5 +5,5 @@ spring:
   data:
     mongodb:
       host: localhost
-      port:
-      database:
+      port: 27017
+      database: NetflixMovies
