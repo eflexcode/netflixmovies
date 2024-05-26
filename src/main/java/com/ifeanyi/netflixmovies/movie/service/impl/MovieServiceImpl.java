@@ -61,6 +61,36 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
+    public List<Movie> getByName(String name) {
+        return movesRepository.findByNameContainingIgnoreCase(name);
+    }
+
+    @Override
+    public List<Movie> getByContentType(String contentType) {
+        return movesRepository.findByContentType(contentType);
+    }
+
+    @Override
+    public List<Movie> getByGenre(String genre) {
+        return movesRepository.findByGenre(genre);
+    }
+
+    @Override
+    public List<Movie> getByDescription(String description) {
+        return movesRepository.findByDescriptionContainingIgnoreCase(description);
+    }
+
+    @Override
+    public List<Movie> getByActors(String actors) {
+        return movesRepository.findByActorsContainingIgnoreCase(actors);
+    }
+
+    @Override
+    public List<Movie> getByDirector(String director) {
+        return movesRepository.findByDirectorContainingIgnoreCase(director);
+    }
+
+    @Override
     public void delete(String id) throws NotFoundException {
         getById(id);
         movesRepository.deleteById(id);
