@@ -18,26 +18,29 @@ public class MovieController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.OK)
-    public Movie create(@RequestBody Movie movie){
+    public Movie create(@RequestBody Movie movie) {
         return movieService.create(movie);
     }
+
     @PutMapping("/update{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Movie update(@PathVariable String id, @RequestBody Movie movie) throws NotFoundException{
+    public Movie update(@PathVariable String id, @RequestBody Movie movie) throws NotFoundException {
         return movieService.update(id, movie);
     }
+
     @GetMapping("/get{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Movie getById(@PathVariable String id) throws NotFoundException{
-     return movieService.getById(id);
-    }
-    @GetMapping("/query")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Movie> query(@RequestParam(required = false) String name,@RequestParam(required = false) String contentType,@RequestParam(required = false) String genre,@RequestParam(required = false) String description,@RequestParam(required = false) String actors,@RequestParam(required = false) String director){
-        return movieService.query(name, contentType, genre, description, actors, director);
+    public Movie getById(@PathVariable String id) throws NotFoundException {
+        return movieService.getById(id);
     }
 
     @GetMapping("/query")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> query(@RequestParam(required = false) String name, @RequestParam(required = false) String contentType, @RequestParam(required = false) String genre, @RequestParam(required = false) String description, @RequestParam(required = false) String actors, @RequestParam(required = false) String director) {
+        return movieService.query(name, contentType, genre, description, actors, director);
+    }
+
+    @GetMapping("/name")
     @ResponseStatus(HttpStatus.OK)
     public List<Movie> getByName(String name) {
         return movieService.getByName(name);
@@ -73,9 +76,8 @@ public class MovieController {
         return movieService.getByDirector(director);
     }
 
-
     @DeleteMapping("/delete/{id}")
-   public void delete(@PathVariable String id) throws NotFoundException{
+    public void delete(@PathVariable String id) throws NotFoundException {
         movieService.delete(id);
     }
 
