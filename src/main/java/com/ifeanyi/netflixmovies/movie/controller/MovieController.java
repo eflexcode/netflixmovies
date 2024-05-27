@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/movie")
 public class MovieController {
 
     private final MovieService movieService;
@@ -30,9 +31,9 @@ public class MovieController {
     public Movie getById(@PathVariable String id) throws NotFoundException{
      return movieService.getById(id);
     }
-    @GetMapping("/get")
+    @GetMapping("/query")
     @ResponseStatus(HttpStatus.OK)
-    public List<Movie> getByName(@RequestParam String name){
+    public List<Movie> query(@RequestParam(required = false) String name,@RequestParam(required = false) String contentType,@RequestParam(required = false) String genre,@RequestParam(required = false) String description,@RequestParam(required = false) String actors,@RequestParam(required = false) String director){
         return movieService.getByName(name);
     }
 
