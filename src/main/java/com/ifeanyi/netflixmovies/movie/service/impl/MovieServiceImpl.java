@@ -62,7 +62,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> query(String name, String contentType, String genre, String description, String actors, String director) {
-        return movesRepository.query(name, contentType, genre, description, actors, director);
+        return movesRepository.findByNameOrContentTypeOrGenreOrDescriptionOrActorsOrDirectorAllIgnoreCase(name, contentType, genre, description, actors, director);
     }
 
     @Override

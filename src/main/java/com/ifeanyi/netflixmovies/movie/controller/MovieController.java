@@ -34,8 +34,45 @@ public class MovieController {
     @GetMapping("/query")
     @ResponseStatus(HttpStatus.OK)
     public List<Movie> query(@RequestParam(required = false) String name,@RequestParam(required = false) String contentType,@RequestParam(required = false) String genre,@RequestParam(required = false) String description,@RequestParam(required = false) String actors,@RequestParam(required = false) String director){
+        return movieService.query(name, contentType, genre, description, actors, director);
+    }
+
+    @GetMapping("/query")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> getByName(String name) {
         return movieService.getByName(name);
     }
+
+    @GetMapping("/contentType")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> getByContentType(String contentType) {
+        return movieService.getByContentType(contentType);
+    }
+
+    @GetMapping("/genre")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> getByGenre(String genre) {
+        return movieService.getByGenre(genre);
+    }
+
+    @GetMapping("/description")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> getByDescription(String description) {
+        return movieService.getByDescription(description);
+    }
+
+    @GetMapping("/actors")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> getByActors(String actors) {
+        return movieService.getByActors(actors);
+    }
+
+    @GetMapping("/director")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Movie> getByDirector(String director) {
+        return movieService.getByDirector(director);
+    }
+
 
     @DeleteMapping("/delete/{id}")
    public void delete(@PathVariable String id) throws NotFoundException{

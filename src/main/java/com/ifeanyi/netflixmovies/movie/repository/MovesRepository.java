@@ -10,14 +10,23 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface MovesRepository extends MongoRepository<Movie,String> {
-    @Query("{ 'name' : ?0 }")
-    List<Movie> query(@Param("name")  String name, @Param("contentType")String contentType, @Param("genre") String genre,@Param("description") String description, @Param("actors")String actors,@Param("director") String director);
+public interface MovesRepository extends MongoRepository<Movie, String> {
+
+    @Query("{ 'name' : ?0}")
+    List<Movie> query(@Param("name") String name, @Param("contentType") String contentType, @Param("genre") String genre, @Param("description") String description, @Param("actors") String actors, @Param("director") String director);
+
     List<Movie> findByNameContainingIgnoreCase(String name);
+
     List<Movie> findByContentType(String contentType);
+
     List<Movie> findByGenre(String genre);
+
     List<Movie> findByDescriptionContainingIgnoreCase(String description);
+
     List<Movie> findByActorsContainingIgnoreCase(String actors);
+
     List<Movie> findByDirectorContainingIgnoreCase(String director);
+
+    List<Movie> findByNameOrContentTypeOrGenreOrDescriptionOrActorsOrDirectorAllIgnoreCase(String name, String contentType, String genre, String description, String actors, String director);
 
 }
