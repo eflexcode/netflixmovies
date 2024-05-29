@@ -1,4 +1,11 @@
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Ov23lix3qsSq9YoN8ion
+            clientSecret: 46c9a9fb27439ffe3e992155e504000303462da3
   application:
     name: NetflixMovies
 

@@ -22,7 +22,7 @@ public class UserController {
     }
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User update(@PathVariable String id, User user) throws NotFoundException {
+    public User update(@PathVariable String id,@RequestBody User user) throws NotFoundException {
         return userService.update(id, user);
     }
     @PutMapping("/bookmarks/{id}/{movieId}")
