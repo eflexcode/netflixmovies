@@ -4,8 +4,8 @@ spring:
       client:
         registration:
           github:
-            clientId: Ov23lix3qsSq9YoN8ion
-            clientSecret: 46c9a9fb27439ffe3e992155e504000303462da3
+            clientId: Ov23liOzlaAkxe2nNd85
+            clientSecret: ca5012c337ff22f879ac5b1db1422aa83817fbeb
   application:
     name: NetflixMovies
 

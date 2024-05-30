@@ -21,6 +21,11 @@ public class MovieController {
     public Movie create(@RequestBody Movie movie) {
         return movieService.create(movie);
     }
+    @GetMapping("/home")
+    @ResponseStatus(HttpStatus.OK)
+    public String home() {
+        return "Home";
+    }
 
     @PutMapping("/update{id}")
     @ResponseStatus(HttpStatus.OK)

@@ -20,6 +20,7 @@ public class NetflixMoviesApplication {
         SpringApplication.run(NetflixMoviesApplication.class, args);
     }
 
+
 //    @Bean
 //    public CommandLineRunner commandLineRunner(MovieService booksService) {
 //

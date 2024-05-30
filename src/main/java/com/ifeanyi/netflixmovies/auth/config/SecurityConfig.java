@@ -13,8 +13,7 @@ public class SecurityConfig {
         security.cors(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth").permitAll().anyRequest().authenticated())
-                .oauth2Client();
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/google_callback").permitAll().anyRequest().authenticated());
 
         return security.build();
 

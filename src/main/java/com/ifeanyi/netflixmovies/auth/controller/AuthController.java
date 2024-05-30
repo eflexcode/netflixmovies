@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/auth")
 public class AuthController {
 
-    @PostMapping("/authSuccess")
+    @PostMapping("/google_callback")
     @ResponseStatus(HttpStatus.OK)
     public String create() {
         return "pppppppppppppppppppppppppp";
